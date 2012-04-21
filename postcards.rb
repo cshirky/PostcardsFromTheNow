@@ -87,6 +87,10 @@ DataMapper.auto_upgrade!
   
 # Main page: view all posts
 get '/' do
+  posts = Post.all
+  post28=Post.get(28)
+  post28.destroy
+  
 @posts = Post.all(:order => [ :post_id.desc ], :limit => 35)
   erb :index
 end
