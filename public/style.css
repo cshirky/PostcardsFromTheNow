@@ -647,24 +647,20 @@ dl, dt {margin-left:15px}
 #file_chooser2{margin-top:75px }
 
 .text-boxsub {
-	width:300px;
+	width:285px;
 	text-align:justify;
-	overflow:scroll;
-	color:#4d4d4d;
-   font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
+		overflow:scroll;
+		color:#4d4d4d;
+    font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
 }
 
-.submittor{
-	margin-left:156px;
-	
-}
+
 .uploadbutton{
-/*	float:right;*/
-margin-left:550px;
+	float:right;
 }
 
 #thinkingtext{
-	width:285px;
+	width:275px;
 }
 
 #user_name_text{
@@ -674,7 +670,7 @@ margin-left:550px;
 	width:230px;
 }
 #country_text{
-	width:199px;
+	width:203px;
 }
 #email_text{
 	width:221px;
