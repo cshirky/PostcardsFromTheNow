@@ -597,6 +597,7 @@ section.share {
 	border-right: 1px solid #CCC;
 }
 .text-box {
+	overflow:scroll;
 	padding-left: 335px;
 	height: 500px;
 	color:#4d4d4d;
