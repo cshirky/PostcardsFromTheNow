@@ -113,18 +113,29 @@
     <!-- THIS IS THE SUBMISSION AREA -->
 
 	<article class="post clearfix submittor" id="post_{PostID}" >
+	
 	<div class="post-z-frame" name="newpost" id="newpost">
+	<header>
+		<h1>
+			<a>Add your Postcard</a>
+		</h1>
+	</header>
+	
 	<form method="post" action="/post/create" id="the_form" enctype="multipart/form-data">	
 
     	<div class="imageupload" >
-    		<div class="photo_upload_rect">What is out your window? <br/>Upload a photo. <input type="file" name="pic1" id="file_chooser1"/></div>
+    		<div class="photo_upload_rect">What is out your window? <input type="file" name="pic1" id="file_chooser1"/></div>
     		
-    		<br/><br/>     	     	
-    		<div class="photo_upload_rect">What is on your screen? <br/>Upload a screenshot.<input type="file" name="pic2" id="file_chooser2"/> </div>
+    		   <br/> 	     	
+    		<div class="photo_upload_rect">What is on your screen? <input type="file" name="pic2" id="file_chooser2"/> </div>
+    		<br/>
+    		What is on your mind?
+    		<textarea id="thinkingtext" rows="5" wrap="physical" name="thoughts" placeholder="Right now, what are you thinking about?"></textarea>
+    		
     	</div>
 
 	<div class="text-boxsub">
-        <textarea id="thinkingtext" rows="5" wrap="physical" name="thoughts" placeholder="What are you thinking about now?"></textarea>
+        
         <br><br>
         Name:<input type="text" id="user_name_text" name="user_name" placeholder="Your Name">
         <br><br>
