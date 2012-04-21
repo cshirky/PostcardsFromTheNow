@@ -646,10 +646,18 @@ dl, dt {margin-left:15px}
 }
 /*UserSubmission*/
 .imageupload{
+	font-family: "Lucida Grande", sans-serif;
+	color:#000;	
 	float:left;
 	width:315px;
 	border-right: 2px solid #CCC;
 	margin-right: 10px;
+	
+}
+
+.photo_upload_rect{
+	background-color: #EEE;
+	margin-right: 14px;
 }
 
 #file_chooser1{margin-top:75px }
@@ -657,8 +665,9 @@ dl, dt {margin-left:15px}
 
 .text-boxsub {
 	width:285px;
+	overflow: scroll;
 	text-align:justify;
-		color:#4d4d4d;
+	color:#4d4d4d;
     font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
 }
 

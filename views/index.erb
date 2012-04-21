@@ -68,8 +68,9 @@
 	<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
 	<% unless comments.empty?%>
 	<div class="comments">
+		
 	    <dl>
-	    <dt class="firstcomments">
+	    <dt class="firstcomments">	    
 		<% counter=0 %> 
 		<% comments.each do |comment| %>
 		    <% if counter< 3 %>
@@ -109,8 +110,10 @@
 	<form method="post" action="/post/create" id="the_form" enctype="multipart/form-data">	
 
     	<div class="imageupload">
-    		<div><input type="file" name="pic1" id="file_chooser1"/></div>
-    		<div><input type="file" name="pic2" id="file_chooser2"/></div>
+    		<div class="photo_upload_rect">What is out your window? <br/>Upload a photo. <input type="file" name="pic1" id="file_chooser1"/></div>
+    		
+    		<br/><br/>     	     	
+    		<div class="photo_upload_rect">What is on your screen? <br/>Upload a screenshot.<input type="file" name="pic2" id="file_chooser2"/> </div>
     	</div>
 
 	<div class="text-boxsub">
