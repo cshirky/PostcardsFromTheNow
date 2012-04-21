@@ -614,7 +614,6 @@ section.share {
 }
 
 
-
 .upload-image-stack {
 	width: 315px;
 	margin-top: -90px;
@@ -655,9 +654,13 @@ dl, dt {margin-left:15px}
     font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
 }
 
-
+.submittor{
+	margin-left:156px;
+	
+}
 .uploadbutton{
-	float:right;
+/*	float:right;*/
+margin-left:550px;
 }
 
 #thinkingtext{
