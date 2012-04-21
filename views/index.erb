@@ -19,16 +19,21 @@
                             <br><br>
             <h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">What is out your window?&nbsp;</h2>
             <h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">What is on your screen?</h2>
-            <h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">What is on your mind?&nbsp;</h2>
+            <h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">What is on your mind?&nbsp;
+            
+            </h2>
+            <a href="#newpost">Submit Below</a>
             <br><br>
             
             <br><br>
+            
               </div>
             </div>
         </div>
         
         <div class="post-head"></div>
-        <div class="post-foot"><h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">Submit</div>
+        <div class="post-foot" ></div>
+        
       </article>
 <div id="post_column" >
 	<div id="articles">	
@@ -70,11 +75,11 @@
 	<div class="comments">
 		
 	    <dl>
-	    <dt class="firstcomments">	    
+	    <dt class="firstcomments">	   
 		<% counter=0 %> 
 		<% comments.each do |comment| %>
 		    <% if counter< 3 %>
-	            <p><strong><span class="commentersname"><%= comment.user_name %> says: </span></strong>:<span class="commentertext"><%= comment.text %></span><p>  		    
+	            <p><strong><span class="commentersname"><%= comment.user_name %> </span></strong>:<span class="commentertext"><%= comment.text %></span><p>  		    
 	        <% end %>
 	        <% if counter == 2 %>
 	        </dt><dd class="morecomments">
@@ -92,7 +97,7 @@
 		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form" class="commentsubmission">
 		<input type="text" id="user_name" name="user_name" placeholder="Name"><br>
 	        <br>
-		<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Reflect"></textarea>	
+		<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Notes"></textarea>	
 		<input type="submit" value="post"/>
 		</form>
     <% end %>
@@ -106,10 +111,10 @@
     <!-- THIS IS THE SUBMISSION AREA -->
 
 	<article class="post clearfix submittor" id="post_{PostID}" >
-	<div class="post-z-frame">
+	<div class="post-z-frame" name="newpost" id="newpost">
 	<form method="post" action="/post/create" id="the_form" enctype="multipart/form-data">	
 
-    	<div class="imageupload">
+    	<div class="imageupload" >
     		<div class="photo_upload_rect">What is out your window? <br/>Upload a photo. <input type="file" name="pic1" id="file_chooser1"/></div>
     		
     		<br/><br/>     	     	
