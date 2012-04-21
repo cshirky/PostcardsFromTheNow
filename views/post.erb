@@ -8,6 +8,8 @@
 				<a href="/<%= post.post_id%>"><%= post.user_name %> - <%= post.city %>, <%= post.country %></a>
 			</h1>
 		</header>
+        
+        	<div class="userdata">
         <!-- Image container -->
 		<div class="image-stack">
 			<img src="<%= post.image1.thumb.url %>" alt="window" />
@@ -15,9 +17,9 @@
 		</div>
         <!-- Text Box -->
 		<div class="text-box">
-			<h2><%= post.thoughts %></h2> <br/>
+			<%= post.thoughts %><br/>
 		</div>
-		
+		</div>
 	    
 
 	</div>
