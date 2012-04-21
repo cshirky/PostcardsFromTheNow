@@ -2,3 +2,4 @@
 heroku
 public/uploads
 s3.rb
+development.db

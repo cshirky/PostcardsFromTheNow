@@ -39,6 +39,7 @@ class MyUploader < CarrierWave::Uploader::Base
       
    version :thumb do
           process :resize_to_fill => [300,200]
+
    end
    
    def cache_dir
@@ -86,7 +87,6 @@ DataMapper.auto_upgrade!
   
 # Main page: view all posts
 get '/' do
-
 @posts = Post.all(:order => [ :post_id.desc ], :limit => 20)
   erb :index
 end

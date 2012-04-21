@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />
+
+
 <!-- <link rel="stylesheet" href="accordian.css" type="text/css" media="screen" charset="utf-8" /> -->
 <link rel="stylesheet" href="lightbox.css" type="text/css" media="screen" />
+<script language="JavaScript" src="gen_validatorv4.js" type="text/javascript" xml:space="preserve"></script>
 
 
 <title>Postcards From the Now</title>
@@ -27,6 +30,37 @@
 <script src="jquery-ui-1.8.18.custom.min.js"></script>
 <script src="jquery.smooth-scroll.min.js"></script>
 <script src="lightbox.js"></script>
+
+<script language="JavaScript" type="text/javascript"
+    xml:space="preserve">//<![CDATA[
+  var frmvalidator  = new Validator("the_form");
+  frmvalidator.EnableOnPageErrorDisplaySingleBox();
+  frmvalidator.EnableMsgsTogether();
+  
+  fileTypeMessage = "Sorry, we can only handle jpg, jpeg, gif and png";
+  
+  frmvalidator.addValidation("file_chooser1","file_extn=jpg;jpeg;gif;png",fileTypeMessage);
+  frmvalidator.addValidation("file_chooser1","req_file","Please add a photo of your window.");
+  
+  frmvalidator.addValidation("file_chooser2","file_extn=jpg;jpeg;gif;png",fileTypeMessage);
+  frmvalidator.addValidation("file_chooser2","req_file","Please add a screenshot.");
+  
+  frmvalidator.addValidation("thoughts","req","Please share what you are thinking about.");
+  frmvalidator.addValidation("thoughts","maxlen=575","You ran out of space in your postcard! Please keep your thoughts under 575 characters");
+  
+  frmvalidator.addValidation("user_name","req","Please enter your first name.");
+  frmvalidator.addValidation("user_name","maxlen=20",	"Sorry, we need a shorter first name.");
+  frmvalidator.addValidation("user_name","alpha","Please use only letters for your name.");  
+  
+  frmvalidator.addValidation("email","maxlen=50");  
+  frmvalidator.addValidation("email","email", "Please enter a valid email -or no email at all-");   
+  
+  frmvalidator.addValidation("city","maxlen=50", "Please check your City's name, it should be under 50 characters");
+  frmvalidator.addValidation("city","req","Please enter your city.");
+  frmvalidator.addValidation("country","maxlen=50", "Please check your Contry's name, it should be under 50 characters");
+  frmvalidator.addValidation("country","req","Please enter your country.");
+
+//]]></script>
 
 </body>
 </html>
