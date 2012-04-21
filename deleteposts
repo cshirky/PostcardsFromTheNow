@@ -1,0 +1,8 @@
+  posts = Post.all
+	posts.each do |post| 
+  post.destroy
+end
+  comments = Post.all
+	comments.each do |post| 
+  comments.destroy
+end

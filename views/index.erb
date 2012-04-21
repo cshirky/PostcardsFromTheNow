@@ -1,0 +1,131 @@
+<article class="post clearfix" id="post_{PostID}" style=" margin: 40px auto; width: 618px;">
+          <div class="post-z-frame">
+            <header>
+                   <section class="private">
+                      <aside>
+                       
+                        <div class="private_post_message">
+                          <h1></h1>                             
+                        </div>
+                      </aside>
+                    </section>
+                    <h1><a href="{Permalink}">Hello World</a></h1>
+              <div class="editbox">
+              </div>
+
+            </header>
+            <div class="body">
+              <div class="inner">
+                            <br><br>
+            <h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">What is outside your window?&nbsp;</h2>
+            <h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">What is on your screen?</h2>
+            <h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">What are you thinking about?&nbsp;</h2>
+            <br><br>
+            
+            <br><br>
+              </div>
+            </div>
+        </div>
+        
+        <div class="post-head"></div>
+        <div class="post-foot"><h2 style="padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #4d4d4d; font-family: ChainprinterRegular, Lucida Grande, Lucida Sans, Lucida Sans Unicode, sans-serif; font-size: 1em; font-weight: normal; text-align: center; margin: 0px;">Submit</div>
+      </article>
+<div id="post_column" >
+	<div id="articles">	
+	<% unless @posts.empty? %>	
+	<% @posts.each do |post| %>
+	<article class="post clearfix" id="post_{PostID}">
+	<div class="post-z-frame">
+		<header>
+			<h1>
+				<a href="/<%= post.post_id%>"><%= post.user_name %> - <%= post.city %>, <%= post.country %></a>
+			</h1>
+		</header>
+		<br>
+		<br>
+		<br>
+		<div class="text-box">
+			<h2><%= post.thoughts %></h2> <br/>
+		</div>
+		<div class="image-stack">
+			<a href="<%= post.image1.url %>" rel="lightbox"><img src="<%= post.image1.thumb.url %>" alt="window" /></a>
+            <a href="<%= post.image2.url %>" rel="lightbox"><img src="<%= post.image2.thumb.url %>" alt="window" /></a>
+		</div>
+		
+	
+	    
+		<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
+		<% unless comments.empty?%>
+		    <dl>
+		    <dt class="firstcomments">
+			<% counter=0 %> 
+			<% comments.each do |comment| %>
+			    <% if counter< 3 %>
+		            <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>  		    
+                <% end %>
+                <% if counter == 2 %>
+                </dt><dd class="morecomments">
+	            <% end %>
+	            <% if counter >= 3 %>
+                    <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>
+                <% end %>
+                
+                <% counter=counter+1 %>    
+            <% end %>
+            </dd></dl>
+        <% end %>
+                    		
+            <br> 		
+			<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form">
+			<input type="text" id="user_name" name="user_name" placeholder="Name"><br>
+                <br>
+			<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Reflect"></textarea>	
+			<input type="submit" value="post"/>
+			</form>
+	</div>
+	<div class="post-head"></div>
+	<div class="post-foot"></div>
+	</article>
+    <% end %>
+	
+<% else %>
+	<p>No Posts</p>
+<% end %>	
+	</div>
+
+	<article class="post clearfix" id="post_{PostID}">
+	<div class="post-z-frame">
+	<form method="post" action="/post/create" id="the_form" enctype="multipart/form-data">	
+
+	<div class="text-box">
+
+        <textarea id="thinkingtext" rows="5" wrap="physical" name="thoughts" placeholder="What are you thinking about now?"></textarea>
+        <br><br>
+        Name:<input type="text" id="user_name_text" name="user_name" placeholder="Your Name">
+        <br><br>
+        City:<input type="text" id="city_text" name="city" placeholder="City">
+        <br><br>
+        Country:<input type="text" id="country_text"name="country" placeholder="Country">
+        <br><br>
+		Email:<input type="text" id="email_text" name="email" placeholder="Email">
+        <br><br>
+	</div>
+	<input type="submit" value="upload"/>
+	<div class="image-stack">
+		<input type="file" name="pic1" id="file_chooser1"/>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<input type="file" name="pic2" id="file_chooser2"/>
+	</div>
+	
+ 
+	</form>
+	</div>
+	
+	<div class="post-head"></div>
+	<div class="post-foot"></div>
+	</article>
