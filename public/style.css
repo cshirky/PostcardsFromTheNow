@@ -613,6 +613,8 @@ section.share {
     padding-top:20px;
 }
 
+
+
 .upload-image-stack {
 	width: 315px;
 	margin-top: -90px;
@@ -647,23 +649,12 @@ dl, dt {margin-left:15px}
 
 .text-boxsub {
 	width:285px;
-
 	text-align:justify;
 		overflow:scroll;
 		color:#4d4d4d;
     font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
 }
 
-.text-box {
-	overflow:scroll;
-	padding-left: 335px;
-	height: 500px;
-	color:#4d4d4d;
-	font-family: "ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
-    font-size:.857em;
-    font-weight:normal;
-    letter-spacing:-.05em;
-}
 
 .uploadbutton{
 	float:right;
