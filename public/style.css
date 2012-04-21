@@ -648,13 +648,13 @@ dl, dt {margin-left:15px}
 }
 /*UserSubmission*/
 .imageupload{
-	color:#4d4d4d;
+	color:#C00;
 	font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
 	float:left;
 	width:315px;
 	border-right: 2px solid #CCC;
 	margin-right: 10px;
-	margin-top:  91px;
+	margin-top:  0px;
 	
 }
 
@@ -662,8 +662,14 @@ dl, dt {margin-left:15px}
 	
 }
 
-#file_chooser1{margin-top:14px }
-#file_chooser2{margin-top:14px }
+#file_chooser1{
+margin-top:14px;
+color:#000;
+}
+#file_chooser2{
+margin-top:14px; 
+color:#000;
+}
 
 
 
@@ -682,6 +688,7 @@ dl, dt {margin-left:15px}
 
 #thinkingtext{
 	width:275px;
+	height:186px;
 }
 
 #user_name_text{
