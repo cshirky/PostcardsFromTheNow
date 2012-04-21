@@ -521,7 +521,7 @@ input[type='button'], input[type='submit'] {
     height: 2em;
     font-size: 1.4em;
     color: #000;
-    margin-top: 10px;
+/*    margin-top: 10px;*/
 }
 
 section.share {
@@ -580,33 +580,100 @@ section.share {
             }
             
                 article.post header {
-                    width: 645px;
-					padding:10px 0;
-
+                    width: 640px;
                 }
+/*OUR STYLING HACKS*/
+/*USER CONTENT*/
+
+.userdata{
+	width:650px;	
+	height:475px;
+}
 
 .image-stack {
 	width: 315px;
-	margin-top: -590px;
-	border-right: 1px solid #CCC;
+	height:420px;
+	float: left;
+	border-right: 2px solid #CCC;
+	margin-right:18px;
+	margin-top:5px;
+}
+
+.text-box {
+	width:285px;
+	height:355px;
+	text-align:justify;
+		overflow:scroll;
+		color:#4d4d4d;
+    font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
+    font-size:.857em;
+    font-weight:normal;
+    letter-spacing:-.05em;
+    padding-top:20px;
 }
 
 .upload-image-stack {
 	width: 315px;
 	margin-top: -90px;
-	border-right: 1px solid #CCC;
+	border-right: 2px solid #CCC;
 }
-.text-box {
-	overflow:scroll;
-	padding-left: 335px;
-	height: 500px;
-	color:#4d4d4d;
+/*COMMENTS*/
+#comment_form{
+	margin-bottom:40px;
+}
+
+dl, dt {margin-left:15px}
+
+.commentsubmission{
+	margin-left:30px;
+
+}
+
+#new_comment{
+	width:610px;
+}
+/*UserSubmission*/
+.imageupload{
+	float:left;
+	width:315px;
+	border-right: 2px solid #CCC;
+	margin-right: 10px;
+}
+
+#file_chooser1{margin-top:75px }
+#file_chooser2{margin-top:75px }
+
+.text-boxsub {
+	width:285px;
+
+	text-align:justify;
+		overflow:scroll;
+		color:#4d4d4d;
     font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
     font-size:.857em;
     font-weight:normal;
     letter-spacing:-.05em;
-    margin:0;
-    padding-top:5px;
+}
+
+.uploadbutton{
+	float:right;
+}
+
+#thinkingtext{
+	width:275px;
+}
+
+#user_name_text{
+	width:230px;
+}
+#city_text{
+	width:230px;
+}
+#country_text{
+	width:203px;
+}
+#email_text{
+	width:221px;
 }
 
                 article header h1 {

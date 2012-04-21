@@ -8,46 +8,48 @@
 				<a href="/<%= post.post_id%>"><%= post.user_name %> - <%= post.city %>, <%= post.country %></a>
 			</h1>
 		</header>
-		<div class="text-box">
-			<h2><%= post.thoughts %></h2> <br/>
-		</div>
+        <!-- Image container -->
 		<div class="image-stack">
 			<img src="<%= post.image1.thumb.url %>" alt="window" />
 			<img src="<%= post.image2.thumb.url %>" alt="window"/>
 		</div>
+        <!-- Text Box -->
+		<div class="text-box">
+			<h2><%= post.thoughts %></h2> <br/>
+		</div>
 		
 	    
-		<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
-		<% unless comments.empty?%>
-		    <dl>
-		    <dt class="firstcomments">
-			<% counter=0 %> 
-			<% comments.each do |comment| %>
-			    <% if counter< 3 %>
-		            <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>  		    
-                <% end %>
-                <% if counter == 2 %>
-                </dt><dd class="morecomments">
-	            <% end %>
-	            <% if counter >= 3 %>
-                    <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>
-                <% end %>
-                
-                <% counter=counter+1 %>    
-            <% end %>
-            </dd></dl>
-        <% end %>
-                    		
-            <br> 		
-			<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form">
-			<input type="text" id="user_name" name="user_name" placeholder="Name"><br>
-                <br>
-			<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Reflect"></textarea>	
-			<input type="submit" value="post"/>
-			</form>
+
 	</div>
 	<div class="post-head"></div>
 	<div class="post-foot"></div>
 	</article>
-
+	<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
+	<% unless comments.empty?%>
+	    <dl>
+	    <dt class="firstcomments">
+		<% counter=0 %> 
+		<% comments.each do |comment| %>
+		    <% if counter< 3 %>
+	            <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>  		    
+            <% end %>
+            <% if counter == 2 %>
+            </dt><dd class="morecomments">
+            <% end %>
+            <% if counter >= 3 %>
+                <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>
+            <% end %>
+            
+            <% counter=counter+1 %>    
+        <% end %>
+        </dd></dl>
+    <% end %>
+                		
+        <br> 		
+		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form">
+		<input type="text" id="user_name" name="user_name" placeholder="Name"><br>
+            <br>
+		<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Reflect"></textarea>	
+		<input type="submit" value="post"/>
+		</form>
 	</div>

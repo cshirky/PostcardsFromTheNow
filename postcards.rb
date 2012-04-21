@@ -38,7 +38,7 @@ class MyUploader < CarrierWave::Uploader::Base
   process :resize_to_limit =>[600,600]  
       
    version :thumb do
-          process :resize_to_fill => [300,168]
+          process :resize_to_fill => [300,200]
    end
    
    def cache_dir

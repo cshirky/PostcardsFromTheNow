@@ -41,15 +41,21 @@
 				<a href="/<%= post.post_id%>"><%= post.user_name %> - <%= post.city %>, <%= post.country %></a>
 			</h1>
 		</header>
-		<br>
-		<br>
-		<br>
-		<div class="text-box">
-			<%= post.thoughts %> <br/>
-		</div>
+		
+	
+		<div class="userdata">
+        <!-- Image Stack -->
 		<div class="image-stack">
 			<a href="<%= post.image1.url %>" rel="lightbox"><img src="<%= post.image1.thumb.url %>" alt="window" /></a>
+			<br><br>
             <a href="<%= post.image2.url %>" rel="lightbox"><img src="<%= post.image2.thumb.url %>" alt="window" /></a>
+		</div>
+		
+		 <!-- Text Box -->
+		 <div class="text-box">
+			<%= post.thoughts %> <br/>
+		</div>
+		
 		</div>
 		
 	</div>
@@ -57,8 +63,11 @@
 	<div class="post-foot"></div>
 	
 	</article>
+    <!-- Comments -->
+    
 	<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
 	<% unless comments.empty?%>
+	<div class="comments">
 	    <dl>
 	    <dt class="firstcomments">
 		<% counter=0 %> 
@@ -79,26 +88,32 @@
 	<% end %>
 	            		
 	    <br> 		
-		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form">
+		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form" class="commentsubmission">
 		<input type="text" id="user_name" name="user_name" placeholder="Name"><br>
 	        <br>
 		<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Reflect"></textarea>	
 		<input type="submit" value="post"/>
 		</form>
     <% end %>
+    </div><!-- closing commentdiv -->
 	
 <% else %>
 	<p>No Posts</p>
 <% end %>	
 	</div>
 	
+    <!-- THIS IS THE SUBMISSION AREA -->
 
 	<article class="post clearfix" id="post_{PostID}">
 	<div class="post-z-frame">
 	<form method="post" action="/post/create" id="the_form" enctype="multipart/form-data">	
 
-	<div class="text-box">
+    	<div class="imageupload">
+    		<div><input type="file" name="pic1" id="file_chooser1"/></div>
+    		<div><input type="file" name="pic2" id="file_chooser2"/></div>
+    	</div>
 
+	<div class="text-boxsub">
         <textarea id="thinkingtext" rows="5" wrap="physical" name="thoughts" placeholder="What are you thinking about now?"></textarea>
         <br><br>
         Name:<input type="text" id="user_name_text" name="user_name" placeholder="Your Name">
@@ -110,17 +125,8 @@
 		Email:<input type="text" id="email_text" name="email" placeholder="Email">
         <br><br>
 	</div>
-	<input type="submit" value="upload"/>
-	<div class="image-stack">
-		<input type="file" name="pic1" id="file_chooser1"/>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<input type="file" name="pic2" id="file_chooser2"/>
-	</div>
+	<input type="submit" class="uploadbutton" value="upload"/>
+
 	
  
 	</form>
