@@ -1,0 +1,4 @@
+*.esproj
+heroku
+public/uploads
+s3.rb
