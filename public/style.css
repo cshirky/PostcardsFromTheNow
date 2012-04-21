@@ -53,6 +53,7 @@ body {
  *
  */
 
+
 @font-face {
     font-family: 'ChainprinterRegular';
     src: url('http://viewoutsidethewindow.posterous.com/themes/postmark/chainprinter-webfont.eot');
@@ -601,7 +602,7 @@ section.share {
 	padding-left: 335px;
 	height: 500px;
 	color:#4d4d4d;
-    font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
+	font-family: "ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
     font-size:.857em;
     font-weight:normal;
     letter-spacing:-.05em;
