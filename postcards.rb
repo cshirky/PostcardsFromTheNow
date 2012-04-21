@@ -35,7 +35,7 @@ class MyUploader < CarrierWave::Uploader::Base
        %w(jpg jpeg gif png)
    end
     
-  process :resize_to_limit =>[600,600]  
+  process :resize_to_limit =>[800,600]  
       
    version :thumb do
           process :resize_to_fill => [300,200]

@@ -79,7 +79,7 @@ body {
 
 }
 
-.commentersname{ font-size:30px}
+
 
 a {
     color:#cc0000;
@@ -603,11 +603,11 @@ section.share {
 .text-box {
 	width:285px;
 	height:355px;
-	text-align:justify;
-		overflow:scroll;
+	text-align:left;
+	overflow:hidden;
 		color:#4d4d4d;
-    font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
-    font-size:.857em;
+    font-family: 'Courier New',"Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
+    font-size:0.9em;
     font-weight:normal;
     letter-spacing:-.05em;
     padding-top:20px;
@@ -621,6 +621,15 @@ section.share {
 }
 
 /*COMMENTS*/
+.comments{
+	font-family: 'Courier New', sans-serif;
+	color: #000;
+}
+
+.commentersname{ 
+	font-size:1em;
+	font-weight:bold;
+}
 #comment_form{
 	margin-bottom:40px;
 }
@@ -649,7 +658,6 @@ dl, dt {margin-left:15px}
 .text-boxsub {
 	width:285px;
 	text-align:justify;
-		overflow:scroll;
 		color:#4d4d4d;
     font-family:"ChainprinterRegular","Lucida Grande","Lucida Sans","Lucida Sans Unicode",sans-serif;
 }

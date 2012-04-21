@@ -73,7 +73,7 @@
 		<% counter=0 %> 
 		<% comments.each do |comment| %>
 		    <% if counter< 3 %>
-	            <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>  		    
+	            <p><strong><span class="commentersname"><%= comment.user_name %> says: </span></strong>:<span class="commentertext"><%= comment.text %></span><p>  		    
 	        <% end %>
 	        <% if counter == 2 %>
 	        </dt><dd class="morecomments">
