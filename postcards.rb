@@ -86,11 +86,6 @@ DataMapper.auto_upgrade!
   
 # Main page: view all posts
 get '/' do
-Post.all.each do |post|
-  post.image1.recreate_versions!
-  post.image2.recreate_versions!
-end
-
 @posts = Post.all(:order => [ :post_id.desc ], :limit => 20)
   erb :index
 end
