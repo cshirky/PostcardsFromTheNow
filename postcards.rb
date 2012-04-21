@@ -14,7 +14,7 @@ Bundler.require
 
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db") 
-DataMapper::Property::String.length(600)
+
  
 class MyUploader < CarrierWave::Uploader::Base
  include CarrierWave::MiniMagick
@@ -65,7 +65,7 @@ class Post
   property :post_id,      Serial
   property :city,         String
   property :country,      String
-  property :thoughts,     String  
+  property :thoughts,     Text  
   property :created_at, DateTime
   property :user_name,	String
   property :user_email,	String 
@@ -77,7 +77,7 @@ class Comment
   include DataMapper::Resource  
   property :comment_id,      Serial
   property :post_id, 	Integer
-  property :text,         String
+  property :text,         Text
   property :user_name,    String
   property :created_at, DateTime
 end
