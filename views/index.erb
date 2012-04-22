@@ -80,25 +80,18 @@
 	<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
 	<% unless comments.empty?%>
 	
-	<div class="comments">
-		<div class="comments_title">Notes for <%= post.user_name%></div>
-	    <dl>
-	    <dt class="firstcomments">	   
-		<% counter=0 %> 
+		<div class="comments">
+			<div class="comments_title">Notes for <%= post.user_name%></div>
+	    
+	    <div class="firstcomments">   
+		
 		<% comments.each do |comment| %>
-		    <% if counter < 3 %>
-	            <p><strong><span class="commentersname"><%= comment.user_name %> </span></strong>:<span class="commentertext"><%= comment.text %></span></p>  		    
-	        <% end %>
-	        <% if counter == 2 %>
-	     </dt><dd class="morecomments">
-	        <% end %>
-	        <% if counter >= 3 %>
-	            <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span></p>
-	        <% end %>
+		   
+	            <p><strong><span class="commentersname"><%= comment.user_name %> </span></strong>:<span class="commentertext"><%= comment.text %></span></p>  	
+	    <% end %>	    
 	        
-	        <% counter=counter+1 %>    
-	    <% end %>
-	    </dd></dl>
+	     </div>	
+	    
 	<% else %>
 		<div class="comments_title">Leave a Note for <%= post.user_name %> </div>	
 	<% end %>  		
