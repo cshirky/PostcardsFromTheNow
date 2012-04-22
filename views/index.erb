@@ -81,7 +81,7 @@
 	<% unless comments.empty?%>
 	
 		<div class="comments">
-			<div class="comments_title">Notes for <%= post.user_name%></div>
+			<div class="comments_title">Notes</div>
 	    
 	    <div class="firstcomments">   
 		
@@ -93,7 +93,7 @@
 	     </div>	
 	    
 	<% else %>
-		<div class="comments_title">Leave a Note for <%= post.user_name %> </div>	
+		<div class="comments_title">Leave a Note</div>	
 	<% end %>  		
 	    <br> 	    	
 		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form" class="commentsubmission">
