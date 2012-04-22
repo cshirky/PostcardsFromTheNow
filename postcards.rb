@@ -136,4 +136,23 @@ get '/:post_id' do
   erb :post
 end
 
+post '/:post_id' do
+  comment = Comment.new
+  comment.post_id = params[:post_id]
+  comment.user_name=params[:user_name]
+  comment.text = params[:comment_text]
+  comment.created_at = Time.now
+   if comment.save
+     status 201
+     redirect '/'  
+   else
+     status 412
+     redirect '/'   
+   end
+ 
+end
+
+
+
+
 
