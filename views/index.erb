@@ -78,33 +78,24 @@
     <!-- Comments -->
     
 	<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
+	<div class="comments">
 	<% unless comments.empty?%>
-	
-		<div class="comments">
-			<div class="comments_title">Notes</div>
-	    
-	    <div class="firstcomments">   
-		
+		<div class="comments_title">Notes</div>
 		<% comments.each do |comment| %>
-		   
-	            <p><strong><span class="commentersname"><%= comment.user_name %> </span></strong>:<span class="commentertext"><%= comment.text %></span></p>  	
-	    <% end %>	    
-	        
-	     </div>	
-	    
-	<% else %>
+			<p><strong><span class="commentersname"><%= comment.user_name %> </span></strong>:<span class="commentertext"><%= comment.text %></span></p>  	
+	    <% end %>
+	<% else %> <!--if there are no comments-->
 		<div class="comments_title">Leave a Note</div>	
 	<% end %>  		
-	    <br> 	    	
-		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form" class="commentsubmission">
+	<br> 	    	
+	<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form" class="commentsubmission">
 		<input type="text" id="user_name" name="user_name" placeholder="Your Name"><br>
 	        <br>
 		<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Your Note"></textarea>	
 		<input type="submit" value="Send" style="float:right; margin-right:26px;"/>
-		</form>
-    <% end %>
-    </div><!-- closing commentdiv -->
-	
+	</form>
+	</div><!-- closing commentdiv -->
+	<% end %><!-- end 'foreach post' -->
 <% else %>
 	<p>No Posts</p>
 <% end %>	

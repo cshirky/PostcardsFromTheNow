@@ -626,11 +626,12 @@ section.share {
 .comments_title{
 font-family: 'ChainprinterRegular', sans-serif;
 color: #C00;
-margin-left: 17px;
+
 }
 .comments{
 	font-family: 'Courier New', sans-serif;
 	color: #000;
+	margin-left: 11px;
 }
 
 
