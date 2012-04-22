@@ -546,7 +546,8 @@ section.share {
     
         article.post {
             background:url(http://viewoutsidethewindow.posterous.com/themes/postmark/post-bg.png) repeat-y;
-            margin-bottom:45px;
+            margin-bottom:17px;
+            margin-top: 91px;
             padding:20px 30px 30px;
             position:relative;
         }
@@ -623,6 +624,8 @@ section.share {
 /*COMMENTS*/
 
 .comments_title{
+font-family: 'ChainprinterRegular', sans-serif;
+color: #C00;
 margin-left: 17px;
 }
 .comments{

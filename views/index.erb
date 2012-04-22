@@ -74,11 +74,12 @@
 	<div class="post-foot"></div>
 	
 	</article>
-	<div class="comments_title">Notes</div>
+	
     <!-- Comments -->
     
 	<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
 	<% unless comments.empty?%>
+	<div class="comments_title">Notes for <%= post.user_name%></div>
 	<div class="comments">
 		
 	    <dl>
@@ -98,13 +99,16 @@
 	        <% counter=counter+1 %>    
 	    <% end %>
 	    </dd></dl>
+	<% else %>
+		<div class="comments_title">Leave a Note for <%= post.user_name %> </div>	
 	<% end %>
 	            		
-	    <br> 		
+	    <br> 
+	    	
 		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form" class="commentsubmission">
 		<input type="text" id="user_name" name="user_name" placeholder="Your Name"><br>
 	        <br>
-		<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Leave a Note"></textarea>	
+		<textarea id="new_comment" rows="3" wrap="physical" name="comment_text" placeholder="Your Note"></textarea>	
 		<input type="submit" value="Send" style="float:right; margin-right:26px;"/>
 		</form>
     <% end %>
