@@ -74,6 +74,7 @@
 	<div class="post-foot"></div>
 	
 	</article>
+	<div class="comments_title">Notes</div>
     <!-- Comments -->
     
 	<% comments = Comment.all(:post_id => post.post_id,:order => [:created_at.asc]) %>
