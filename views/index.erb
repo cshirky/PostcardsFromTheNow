@@ -40,7 +40,7 @@
         <div class="post-head"></div>
         <div class="post-foot" ></div>
         
-      </article>
+</article>
 <div id="post_column" >
 	<div id="articles">	
 	<% unless @posts.empty? %>	
@@ -90,7 +90,7 @@
 	            <p><strong><span class="commentersname"><%= comment.user_name %> </span></strong>:<span class="commentertext"><%= comment.text %></span><p>  		    
 	        <% end %>
 	        <% if counter == 2 %>
-	        </dt><dd class="morecomments">
+	     </dt><dd class="morecomments">
 	        <% end %>
 	        <% if counter >= 3 %>
 	            <p><span class="commentersname"><%= comment.user_name %></span>:<span class="commentertext"><%= comment.text %></span><p>
@@ -101,10 +101,8 @@
 	    </dd></dl>
 	<% else %>
 		<div class="comments_title">Leave a Note for <%= post.user_name %> </div>	
-	<% end %>
-	            		
-	    <br> 
-	    	
+	<% end %>  		
+	    <br> 	    	
 		<form method="post" action="/comment/create/<%= post.post_id %>" id="comment_form" class="commentsubmission">
 		<input type="text" id="user_name" name="user_name" placeholder="Your Name"><br>
 	        <br>
@@ -117,11 +115,11 @@
 <% else %>
 	<p>No Posts</p>
 <% end %>	
-	</div>
+</div><!-- closing articles -->
 	
     <!-- THIS IS THE SUBMISSION AREA -->
 
-	<article class="post clearfix submittor" id="post_{PostID}" >
+<article class="post clearfix submittor" id="post_{PostID}" >
 	
 	<div class="post-z-frame" name="newpost" id="newpost">
 	<header>
@@ -164,5 +162,6 @@
 	<div class="post-foot">
 	<div id="the_form_errorloc" class="error_strings">
 	</div>
-	</div>
-	</article>
+	
+</article>
+</div><!-- Closing post-column -->
